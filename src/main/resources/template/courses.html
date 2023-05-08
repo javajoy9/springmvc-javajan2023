@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses</title>
+</head>
+<body>
+<table>
+  <thead>
+  <th>ID</th>
+  <th>Course</th>
+  <th>Instructor</th>
+  </thead>
+  <tbody class="courselist">
+  <tr th:if="${courses.empty}">
+    <td>No Courses Available</td>
+  </tr>
+  <tr th:each="course: ${courses}">
+    <td th:text="${course.id}">ID : </td>
+    <td th:text="${course.courseName}">Course Name : </td>
+    <td th:text="${course.instructor}">Instructor : </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
+</html>
